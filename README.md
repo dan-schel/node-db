@@ -1,5 +1,7 @@
 # NodeJS Database Library
 
+[![codecov](https://codecov.io/github/dan-schel/node-db/graph/badge.svg?token=UH6IHPDG9W)](https://codecov.io/github/dan-schel/node-db)
+
 Provides a common API for working with MongoDB or an in-memory database, with a migration system and type-safety. This means you can use MongoDB in prod, an in-memory database while unit testing, and whichever you prefer for local development.
 
 ## Getting started

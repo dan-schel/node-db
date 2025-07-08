@@ -1,3 +1,5 @@
+/* v8 ignore start -- @preserve */
+
 import { z } from "zod";
 import { DatabaseModel } from "@dan-schel/db";
 
@@ -47,3 +49,5 @@ export class CrayonModel extends DatabaseModel<
     return new Crayon(id, parsed.color, parsed.usesLeft, parsed.drawings);
   }
 }
+
+/* v8 ignore stop -- @preserve */
