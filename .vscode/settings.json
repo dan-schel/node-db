@@ -1,0 +1,4 @@
+{
+  // Ensures the ESLint extension uses the project's config file.
+  "eslint.useFlatConfig": true
+}
