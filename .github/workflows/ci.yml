@@ -46,7 +46,7 @@ jobs:
         uses: codecov/codecov-action@v5.4.3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: dan-schel/db
+          slug: dan-schel/node-db
   build:
     name: Builds successfully
     runs-on: ubuntu-latest
