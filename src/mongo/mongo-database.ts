@@ -7,7 +7,7 @@ import { MongoMigrationHandler } from "./mongo-migration-handler.js";
 export class MongoDatabase extends Database {
   private readonly _db: Db;
 
-  private constructor(client: MongoClient, databaseName: string) {
+  constructor(client: MongoClient, databaseName: string) {
     super();
     this._db = client.db(databaseName);
   }
