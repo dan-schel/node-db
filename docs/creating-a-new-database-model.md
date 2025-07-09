@@ -113,7 +113,7 @@ private static schema = z.object({
 });
 ```
 
-This is a [Zod](https://zod.dev/) schema. Zod is a library that lets us take any unknown value in Typescript and validate that it follows a certain shape. In our example we check that it's an object with `color`, `usesLeft`, and `drawings` fields. We check that `color` is one of the four supported values, `usesLeft` is a number, and `drawings` is an array of strings. (Note that using Zod isn't required, you could use which validation tool you like, or even write the deserialization logic by hand if you wish.)
+This is a [Zod](https://zod.dev/) schema. Zod is a library that lets us take any unknown value in Typescript and validate that it follows a certain shape. In our example we check that it's an object with `color`, `usesLeft`, and `drawings` fields. We check that `color` is one of the four supported values, `usesLeft` is a number, and `drawings` is an array of strings. (Note that using Zod isn't required, you could use whichever validation tool you like, or even write the deserialization logic by hand if you wish.)
 
 You'll notice these match the fields in our `Crayon` class, except we're missing `id`. This is intentional (more on that soon)!
 
