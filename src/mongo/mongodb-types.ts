@@ -15,12 +15,12 @@ export type Db = {
 export type Collection<T = any> = {
   find: (filter: object, options?: object) => FindCursor<T>;
   findOne: (filter: object) => Promise<any>;
-  insertOne: (document: object) => Promise<void>;
-  replaceOne: (filter: object, replacement: object) => Promise<void>;
-  deleteOne: (filter: object) => Promise<void>;
-  deleteMany: (filter: object) => Promise<void>;
-  rename: (name: string) => Promise<void>;
-  drop: () => Promise<void>;
+  insertOne: (document: object) => Promise<any>;
+  replaceOne: (filter: object, replacement: object) => Promise<any>;
+  deleteOne: (filter: object) => Promise<any>;
+  deleteMany: (filter: object) => Promise<any>;
+  rename: (name: string) => Promise<any>;
+  drop: () => Promise<any>;
   countDocuments: (filter: object) => Promise<number>;
 };
 
