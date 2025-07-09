@@ -23,14 +23,14 @@
 
 All database functions require you to have a `Database` instance (either `InMemoryDatabase` or `MongoDatabase`) and the model you wish to query. "Model" is a synonym for "entity", i.e. what relational databases call a "table" or what MongoDB calls "collection".
 
-(A guide on creating your own database models can be found [here](/docs/database/creating-a-new-database-model.md).)
+(A guide on creating your own database models can be found [here](/docs/creating-a-new-database-model.md).)
 
 ```ts
-import { initDatabase } from "server/database/init-database";
-import { CRAYONS } from "server/database/models/models";
-import { Crayon } from "server/database/models/crayons";
+import { CRAYONS } from "src/models";
+import { Crayon } from "src/models/crayons";
 
-const db = await initDatabase();
+// See README.md for `createDb` implementation.
+const db = await createDb();
 ```
 
 Note that we've imported both `CRAYONS` and `Crayon`.

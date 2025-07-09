@@ -11,7 +11,7 @@ Every time your app starts, you'll want to create a database connection, and imm
 ```ts
 import type { Migration } from "@dan-schel/db";
 
-// Empty for now (see docs/writing-database-migrations.md).
+// Empty to start (see docs/writing-database-migrations.md).
 const migrations: Migration[] = [];
 
 const db = createDb();

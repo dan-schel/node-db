@@ -40,6 +40,8 @@ This is how most of your codebase will interact with `Crayon` data. Add whatever
 
 The model class, on the other hand, is very much a database-related class. It's responsible for defining how the data class is converted into a format which can be stored in the database. MongoDB essentially stores JSON, so put simply, it serializes (converts to JSON) and deserializes (parses from JSON) the data.
 
+While data classes can live wherever makes the most sense, I recommend putting all model class files together in the same directory (e.g. `src/models/`) so you have easy visibility into the list of collections which exist in your database.
+
 The full class looks something like this:
 
 ```ts
@@ -79,8 +81,6 @@ export class CrayonModel extends DatabaseModel<
 }
 ```
 
-While data classes can live wherever makes the most sense, I recommend putting all model class files together in the same directory (e.g. `src/models/`) so you have easy visibility into the list of collections which exist in your database.
-
 ### The generics
 
 The first thing you'll notice is the three generic types.
@@ -113,7 +113,7 @@ private static schema = z.object({
 });
 ```
 
-This is a [Zod](https://zod.dev/) schema. Zod is a library that lets us take any unknown value in Typescript and validate that it follows a certain shape. In our example we check that it's an object with `color`, `usesLeft`, and `drawings` fields. We check that `color` is one of the four supported values, `usesLeft` is a number, and `drawings` is an array of strings.
+This is a [Zod](https://zod.dev/) schema. Zod is a library that lets us take any unknown value in Typescript and validate that it follows a certain shape. In our example we check that it's an object with `color`, `usesLeft`, and `drawings` fields. We check that `color` is one of the four supported values, `usesLeft` is a number, and `drawings` is an array of strings. (Note that using Zod isn't required, you could use which validation tool you like, or even write the deserialization logic by hand if you wish.)
 
 You'll notice these match the fields in our `Crayon` class, except we're missing `id`. This is intentional (more on that soon)!
 
@@ -184,7 +184,7 @@ Finally, you might like to add a constant somewhere, like so:
 export const CRAYONS = CrayonModel.instance;
 ```
 
-If you have multiple models, why not put these constants in the same file. That way, you'll have a central repository of all the database models in your app. Having the constants just makes them nicer to import and use, i.e. you can do `db.of(CRAYONS)` instead of `db.of(CrayonModel.instance)`.
+If you have multiple models, why not put these constants in the same file? That way, you'll have a central repository of all the database models in your app. Having the constants also makes them nicer to import and use, i.e. you can do `db.of(CRAYONS)` instead of `db.of(CrayonModel.instance)`.
 
 ## Limitations
 
